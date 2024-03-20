@@ -33,18 +33,22 @@ class AccessUserMessageMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($this->_messageService->show($request['id'])->rule == 'concrete_visible' && !is_null(
-            $this->_accessMessageService->exists(
-                $request->id,
-                // Получение User::id по токену
-                $this->_userService->show(User::getUserByToken(
-                        explode(' ', $request->headers->get('authorization'))[2]
-                )->tokenable_id)->id
-            )
-        ))
+        if ($this->_messageService->show($request['id'])->rule == 'concrete_visible')
         {
-            return $next($request);
+            $user = $this->_userService->show(User::getUserByToken(
+                explode(' ', $request->headers->get('authorization'))[2]
+            )->tokenable_id);
+            if (
+                // Поользователь имеет доступ
+                !is_null($this->_accessMessageService->exists($request->id, $user->id)) ||
+                // Поользователь владелец
+                $this->_messageService->show($request->id)->owner_id == $user->id
+            )
+            {
+                return $next($request);
+            }
+            throw new \Exception('У вас нет доступа к сообщению!');
         }
-        throw new \Exception('У вас нет доступа к сообщению!');
+        return $next($request);
     }
 }

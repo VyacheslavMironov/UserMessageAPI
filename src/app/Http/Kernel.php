@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\AccessAuthToMessageMiddleware;
+use App\Http\Middleware\AccessUserMessageMiddleware;
 use App\Models\AccessUserToMessage;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -67,6 +68,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'access.auth.message' => AccessAuthToMessageMiddleware::class,
-        'access.user' => AccessUserToMessage::class,
+        'access.user' => AccessUserMessageMiddleware::class
     ];
 }

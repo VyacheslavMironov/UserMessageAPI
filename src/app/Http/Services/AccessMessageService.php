@@ -16,7 +16,7 @@ class AccessMessageService implements AccessMessageInterface
         $access->user_id = $request['user_id'];
         return $access->save();
     }
-    public function exists(int $message_id, int $user_id): AccessUserToMessage
+    public function exists(int $message_id, int $user_id): AccessUserToMessage|null
     {
         return AccessUserToMessage::where(['message_id' => $message_id, 'user_id' => $user_id])->first();
     }

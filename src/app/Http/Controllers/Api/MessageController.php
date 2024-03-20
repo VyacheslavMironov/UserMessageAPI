@@ -36,9 +36,9 @@ class MessageController extends Controller
     }
     public function show(Request $request, int $id)
     {
-//        return response()
-//            ->json(new MessageResource($this->_messageService->show($id)))
-//            ->setStatusCode(200);
+        return response()
+            ->json(new MessageResource($this->_messageService->show($id)))
+            ->setStatusCode(200);
     }
     public function all()
     {

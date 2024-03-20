@@ -27,8 +27,9 @@ Route::prefix('user')->group(function (){
 
 Route::prefix('message')->group(function () {
     Route::get('/', [MessageController::class, 'all']);
-        Route::get('/show/{id}', [MessageController::class, 'show'])
-            ->middleware(['access.auth.message', 'access.user']);
+    Route::middleware(['access.user', 'access.auth.message'])->group(function () {
+        Route::get('/show/{id}', [MessageController::class, 'show']);
+    });
 });
 Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('message')->group(function (){

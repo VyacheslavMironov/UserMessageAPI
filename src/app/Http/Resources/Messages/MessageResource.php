@@ -19,7 +19,6 @@ class MessageResource extends JsonResource
             'owner_id'      => $this->owner_id,
             'text'          => $this->text,
             'rule'          => $this->rule,
-            'access'        => $this->user_access,
             'created_at'    => $this->created_at,
             'updated_at'    => $this->updated_at,
         ];
