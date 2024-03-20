@@ -9,23 +9,15 @@ use Illuminate\Database\Eloquent\Collection;
 class AccessMessageService implements AccessMessageInterface
 {
 
-    public function create(array $request): AccessUserToMessage
+    public function create(array $request): bool
     {
-        // TODO: Implement create() method.
+        $access = new AccessUserToMessage();
+        $access->message_id = $request['message_id'];
+        $access->user_id = $request['user_id'];
+        return $access->save();
     }
-
-    public function show(int $message_id): Collection
+    public function exists(int $message_id, int $user_id): AccessUserToMessage
     {
-        // TODO: Implement show() method.
-    }
-
-    public function update(array $request): AccessUserToMessage
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete(AccessUserToMessage $context): bool
-    {
-        // TODO: Implement delete() method.
+        return AccessUserToMessage::where(['message_id' => $message_id, 'user_id' => $user_id])->first();
     }
 }

@@ -24,4 +24,8 @@ class UserService implements UserServiceInterface
             return ['message' => 'Не верный логин или пароль!'];
         }
     }
+    public function show(int $id)
+    {
+        return User::find($id);
+    }
 }

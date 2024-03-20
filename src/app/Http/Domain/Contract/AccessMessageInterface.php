@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Collection;
 
 interface AccessMessageInterface
 {
-    public function create(array $request): AccessUserToMessage;
-    public function show(int $message_id): Collection;
-    public function update(array $request): AccessUserToMessage;
-    public function delete(AccessUserToMessage $context): bool;
+    public function create(array $request): bool;
+    public function exists(int $message_id, int $user_id): AccessUserToMessage;
 }

@@ -9,14 +9,22 @@ use App\Http\Requests\Messages\MessageUpdateRequest;
 use App\Http\Resources\Messages\MessageResource;
 use App\Http\Services\AccessMessageService;
 use App\Http\Services\MessageService;
+use App\Http\Services\UserService;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
     private MessageService $_messageService;
+    private UserService $_userService;
     private AccessMessageService $_accessMessageService;
-    public function __construct(MessageService $messageService, AccessMessageService $accessMessageService)
+    public function __construct(
+        UserService $userService,
+        MessageService $messageService,
+        AccessMessageService $accessMessageService
+    )
     {
+        $this->_userService = $userService;
         $this->_messageService = $messageService;
         $this->_accessMessageService = $accessMessageService;
     }
@@ -26,11 +34,11 @@ class MessageController extends Controller
             ->json(new MessageResource($this->_messageService->create($request->validated())))
             ->setStatusCode(201);
     }
-    public function show(int $id)
+    public function show(Request $request, int $id)
     {
-        return response()
-            ->json(new MessageResource($this->_messageService->show($id)))
-            ->setStatusCode(200);
+//        return response()
+//            ->json(new MessageResource($this->_messageService->show($id)))
+//            ->setStatusCode(200);
     }
     public function all()
     {
