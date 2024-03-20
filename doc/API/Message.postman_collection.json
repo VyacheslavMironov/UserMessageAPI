@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "e97167be-28b7-4693-b2e7-8eb4d1924631",
+		"name": "Message",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19706904",
+		"_collection_link": "https://www.postman.com/gold-satellite-925746/workspace/usermessageapi/collection/19706904-e97167be-28b7-4693-b2e7-8eb4d1924631?action=share&source=collection_link&creator=19706904"
+	},
+	"item": [
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 2|SYSzuR2D5B5JEum3VT94zMwn52WdYHsdnJjtzvw2aa3563a6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "message_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Я не приду",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1/api/message/comment/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"api",
+								"message",
+								"comment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 2|SYSzuR2D5B5JEum3VT94zMwn52WdYHsdnJjtzvw2aa3563a6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1/api/message/comment/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"api",
+								"message",
+								"comment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 1|0nIO6hN7WtmAbfU8u1B7829GsRl4VAtYlTg523Ej219bfe70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1/api/message/comment/show/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"api",
+								"message",
+								"comment",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 1|0nIO6hN7WtmAbfU8u1B7829GsRl4VAtYlTg523Ej219bfe70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "message_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Пока.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1/api/message/comment/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"api",
+								"message",
+								"comment",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer 1|0nIO6hN7WtmAbfU8u1B7829GsRl4VAtYlTg523Ej219bfe70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1/api/message/comment/delete/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"api",
+								"message",
+								"comment",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer 1|Iw2c0yOaJxFTb9unnsle7tS68bAvxvKpsw3ZlSFlb5aecb9c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "owner_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Привет друзья, мне скучно давайте встретимся.",
+							"type": "text"
+						},
+						{
+							"key": "rule",
+							"value": "auth_visible",
+							"type": "text"
+						},
+						{
+							"key": "access_users",
+							"value": "3,1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/message/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"message",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/api/message/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"message",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer 3|biF6H8nnVfj3DRGKZ5lUQTm1vV0H3QmyhPDP8GKt3718cd44",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/api/message/show/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"message",
+						"show",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer 2|0sEJCE7sbfeA2rEEy4S70vIbJLY03J13Pz42L6Gn6452506f",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Тест обновления сообщения",
+							"type": "text"
+						},
+						{
+							"key": "rule",
+							"value": "auth_visible",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/message/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"message",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer 2|0sEJCE7sbfeA2rEEy4S70vIbJLY03J13Pz42L6Gn6452506f",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1/api/message/delete/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"message",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
